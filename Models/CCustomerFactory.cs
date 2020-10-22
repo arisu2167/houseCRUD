@@ -91,5 +91,22 @@ namespace houseCRUD.Models
 
             CDbManager.executeSql(sql, paras);
         }
+        public static void fn顧客刪除(CCustomer customer)
+        {
+            string sql = $"EXEC 顧客刪除 ";
+            sql += $"@{CCustomerKey.fCustomerId}";
+
+            List<SqlParameter> paras = new List<SqlParameter>()
+            {
+                new SqlParameter(CCustomerKey.fCustomerId, customer.fCustomerId)
+            };
+
+            CDbManager.executeSql(sql, paras);
+        }
+        //public void delete(CCustomer p)
+        //{
+        //    string sql = "DELETE FROM tCustomer WHERE fId=" + p.fCustomerId.ToString();
+        //    (new CDbManager()).executeSql(sql, null);
+        //}
     }
 }

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<houseCRUD.Models.CCustomer>
 
 @{
-    ViewBag.Title = "CustomerData";
+    ViewBag.Title = "顧客資料";
 }
 
-<h2>顧客資料</h2>
 
+    <h4>顧客資料</h4>
 
 <p>
     <input class="seachname" type="text" placeholder="請輸入搜尋姓名" />
@@ -33,10 +33,12 @@
         </th>
         <th>
             電話
-        </th>        
+        </th> 
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
+    string s = "return confirm('確定要刪除" + item.fCustomerName + "嗎 ? ')";
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.fCustomerId)
@@ -58,8 +60,13 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.fCustomerPhone)
-        </td>        
+        </td>
+        <td>
+            @Html.ActionLink("編輯", "CustomerEdit") |
+            @Html.ActionLink("刪除", "CustomerDelete", "Home", new{OnClick = s})
+        </td>
     </tr>
 }
 
 </table>
+<p>@Html.ActionLink("新增顧客資料", "CustomerCreate")</p>

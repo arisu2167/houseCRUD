@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="houseCRUDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tCustomer">
+          <Key>
+            <PropertyRef Name="fCustomerId" />
+          </Key>
+          <Property Name="fCustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fCustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fCustomerBirth" Type="date" Nullable="false" />
+          <Property Name="fCustomerGender" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="fCustomerEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fCustomerAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fCustomerPhone" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tProduct">
+          <Key>
+            <PropertyRef Name="fProductId" />
+          </Key>
+          <Property Name="fProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fProductPrice" Type="int" Nullable="false" />
+          <Property Name="fProductAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fProductExplain" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="fProductPhoto" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityContainer Name="houseCRUDModelStoreContainer">
+          <EntitySet Name="tCustomer" EntityType="Self.tCustomer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tProduct" EntityType="Self.tProduct" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="houseCRUDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tCustomer">
+          <Key>
+            <PropertyRef Name="fCustomerId" />
+          </Key>
+          <Property Name="fCustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fCustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fCustomerBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fCustomerGender" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="fCustomerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fCustomerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fCustomerPhone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tProduct">
+          <Key>
+            <PropertyRef Name="fProductId" />
+          </Key>
+          <Property Name="fProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fProductPrice" Type="Int32" Nullable="false" />
+          <Property Name="fProductAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fProductExplain" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fProductPhoto" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="houseCRUDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tCustomers" EntityType="Self.tCustomer" />
+          <EntitySet Name="tProducts" EntityType="Self.tProduct" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="houseCRUDModelStoreContainer" CdmEntityContainer="houseCRUDEntities">
+          <EntitySetMapping Name="tCustomers">
+            <EntityTypeMapping TypeName="houseCRUDModel.tCustomer">
+              <MappingFragment StoreEntitySet="tCustomer">
+                <ScalarProperty Name="fCustomerId" ColumnName="fCustomerId" />
+                <ScalarProperty Name="fCustomerName" ColumnName="fCustomerName" />
+                <ScalarProperty Name="fCustomerBirth" ColumnName="fCustomerBirth" />
+                <ScalarProperty Name="fCustomerGender" ColumnName="fCustomerGender" />
+                <ScalarProperty Name="fCustomerEmail" ColumnName="fCustomerEmail" />
+                <ScalarProperty Name="fCustomerAddress" ColumnName="fCustomerAddress" />
+                <ScalarProperty Name="fCustomerPhone" ColumnName="fCustomerPhone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tProducts">
+            <EntityTypeMapping TypeName="houseCRUDModel.tProduct">
+              <MappingFragment StoreEntitySet="tProduct">
+                <ScalarProperty Name="fProductId" ColumnName="fProductId" />
+                <ScalarProperty Name="fProductName" ColumnName="fProductName" />
+                <ScalarProperty Name="fProductPrice" ColumnName="fProductPrice" />
+                <ScalarProperty Name="fProductAddress" ColumnName="fProductAddress" />
+                <ScalarProperty Name="fProductExplain" ColumnName="fProductExplain" />
+                <ScalarProperty Name="fProductPhoto" ColumnName="fProductPhoto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="houseCRUDModelStoreContainer" CdmEntityContainer="houseCRUDEntities">
+    <EntitySetMapping Name="tCustomers">
+      <EntityTypeMapping TypeName="houseCRUDModel.tCustomer">
+        <MappingFragment StoreEntitySet="tCustomer">
+          <ScalarProperty Name="fCustomerId" ColumnName="fCustomerId" />
+          <ScalarProperty Name="fCustomerName" ColumnName="fCustomerName" />
+          <ScalarProperty Name="fCustomerBirth" ColumnName="fCustomerBirth" />
+          <ScalarProperty Name="fCustomerGender" ColumnName="fCustomerGender" />
+          <ScalarProperty Name="fCustomerEmail" ColumnName="fCustomerEmail" />
+          <ScalarProperty Name="fCustomerAddress" ColumnName="fCustomerAddress" />
+          <ScalarProperty Name="fCustomerPhone" ColumnName="fCustomerPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tProducts">
+      <EntityTypeMapping TypeName="houseCRUDModel.tProduct">
+        <MappingFragment StoreEntitySet="tProduct">
+          <ScalarProperty Name="fProductId" ColumnName="fProductId" />
+          <ScalarProperty Name="fProductName" ColumnName="fProductName" />
+          <ScalarProperty Name="fProductPrice" ColumnName="fProductPrice" />
+          <ScalarProperty Name="fProductAddress" ColumnName="fProductAddress" />
+          <ScalarProperty Name="fProductExplain" ColumnName="fProductExplain" />
+          <ScalarProperty Name="fProductPhoto" ColumnName="fProductPhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

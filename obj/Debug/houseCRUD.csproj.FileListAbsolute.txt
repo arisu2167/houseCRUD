@@ -84,3 +84,8 @@ E:\houseCRUDtest\houseCRUD\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
 E:\houseCRUDtest\houseCRUD\obj\Debug\houseCRUD.csproj.CopyComplete
 E:\houseCRUDtest\houseCRUD\obj\Debug\houseCRUD.dll
 E:\houseCRUDtest\houseCRUD\obj\Debug\houseCRUD.pdb
+E:\houseCRUDtest\houseCRUD\bin\EntityFramework.dll
+E:\houseCRUDtest\houseCRUD\bin\EntityFramework.SqlServer.dll
+E:\houseCRUDtest\houseCRUD\bin\EntityFramework.xml
+E:\houseCRUDtest\houseCRUD\bin\EntityFramework.SqlServer.xml
+E:\houseCRUDtest\houseCRUD\bin\zh-Hant\EntityFramework.resources.dll

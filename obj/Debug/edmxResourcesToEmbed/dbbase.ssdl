@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="houseCRUDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tCustomer">
+    <Key>
+      <PropertyRef Name="fCustomerId" />
+    </Key>
+    <Property Name="fCustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fCustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fCustomerBirth" Type="date" Nullable="false" />
+    <Property Name="fCustomerGender" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="fCustomerEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fCustomerAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fCustomerPhone" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tProduct">
+    <Key>
+      <PropertyRef Name="fProductId" />
+    </Key>
+    <Property Name="fProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fProductPrice" Type="int" Nullable="false" />
+    <Property Name="fProductAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fProductExplain" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fProductPhoto" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="houseCRUDModelStoreContainer">
+    <EntitySet Name="tCustomer" EntityType="Self.tCustomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tProduct" EntityType="Self.tProduct" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
