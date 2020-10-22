@@ -1,0 +1,65 @@
+﻿@model IEnumerable<houseCRUD.Models.CCustomer>
+
+@{
+    ViewBag.Title = "CustomerData";
+}
+
+<h2>顧客資料</h2>
+
+
+<p>
+    <input class="seachname" type="text" placeholder="請輸入搜尋姓名" />
+    <input class="" type="button" value="搜尋" />
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            編號
+        </th>
+        <th>
+            姓名
+        </th>
+        <th>
+            生日
+        </th>
+        <th>
+            性別
+        </th>
+        <th>
+            電子信箱
+        </th>
+        <th>
+            地址
+        </th>
+        <th>
+            電話
+        </th>        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerGender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerPhone)
+        </td>        
+    </tr>
+}
+
+</table>

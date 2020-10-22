@@ -128,6 +128,9 @@
     <Compile Include="Models\CCustomerFactory.cs" />
     <Compile Include="Models\CCustomerKey.cs" />
     <Compile Include="Models\CDbManager.cs" />
+    <Compile Include="Models\CProdcutKey.cs" />
+    <Compile Include="Models\CProduct.cs" />
+    <Compile Include="Models\CProductFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +169,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\CustomerData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

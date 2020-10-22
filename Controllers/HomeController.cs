@@ -1,4 +1,5 @@
-﻿using System;
+﻿using houseCRUD.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,12 @@ namespace houseCRUD.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult CustomerData()
+        {
+            var customerdata = CCustomerFactory.fn顧客查詢().ToList();
+            return View(customerdata);
         }
     }
 }
