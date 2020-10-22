@@ -10,5 +10,6 @@ namespace houseCRUD.Models
     {
         private static string _dbConnect = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
         //public delegate IList
+        //test
     }
 }
