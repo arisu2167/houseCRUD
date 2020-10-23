@@ -1,0 +1,66 @@
+﻿@model houseCRUD.tCustomer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tCustomer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fCustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fCustomerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fCustomerBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fCustomerBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fCustomerGender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fCustomerGender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fCustomerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fCustomerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fCustomerAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fCustomerAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fCustomerPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fCustomerPhone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.fCustomerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

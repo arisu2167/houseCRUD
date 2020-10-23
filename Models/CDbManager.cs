@@ -13,31 +13,15 @@ namespace houseCRUD.Models
     {
         //private static string _connectionString = ConfigurationManager.ConnectionStrings["Data Source=.;Initial Catalog=houseCRUD;Integrated Security=True"].ConnectionString;
         //提供用戶端應用程式的組態檔存取。 此類別無法獲得繼承。 繼承 Object->ConfigurationManager
-       
+
         public delegate IList DataReader(SqlDataReader reader);
 
         public static void executeSql(string sql, List<SqlParameter> paras)
         {
-            //SqlConnection con = new SqlConnection();
-            //con.ConnectionString = @"Data Source=.;Initial Catalog=houseCRUD;Integrated Security=True";
-            //con.Open();
 
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.Connection = con;
-            //cmd.CommandText = sql;
-            //if (paras != null)
-            //{
-            //    foreach (SqlParameter p in paras)
-            //    {
-            //        cmd.Parameters.Add(p);
-            //    }
-            //}
-            //cmd.ExecuteNonQuery();
-
-            //con.Close();
             using (SqlConnection connection = new SqlConnection())
             {
-                connection.ConnectionString= @"Data Source=.;Initial Catalog=houseCRUD;Integrated Security=True";
+                connection.ConnectionString = @"Data Source=.;Initial Catalog=houseCRUD;Integrated Security=True";
                 connection.Open();
                 //Console.WriteLine("[Info]成功連接資料庫！");
 
@@ -59,28 +43,9 @@ namespace houseCRUD.Models
             }
         }
 
-        public static IList querySql(string sql, List<SqlParameter> paras,DataReader dr)
+        public static IList querySql(string sql, List<SqlParameter> paras, DataReader dr)
         {
-            //SqlConnection con = new SqlConnection();
-            //con.ConnectionString = @"Data Source=.;Initial Catalog=houseCRUD;Integrated Security=True";
-            //con.Open();
 
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.Connection = con;
-            //cmd.CommandText = sql;
-            //if (paras != null)
-            //{
-            //    foreach (SqlParameter p in paras)
-            //    {
-            //        cmd.Parameters.Add(p);
-            //    }
-            //}
-
-            //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            //DataSet ds = new DataSet();
-            //adapter.Fill(ds);
-            //con.Close();
-            //return ds.Tables[0];
             IList lsResult;
             using (SqlConnection connection = new SqlConnection())
             {
@@ -108,5 +73,50 @@ namespace houseCRUD.Models
             }
             return lsResult;
         }
+        //public void executeSql(string sql, List<SqlParameter> paras)
+        //{
+        //    SqlConnection con = new SqlConnection();
+        //    con.ConnectionString = @"Data Source=.;Initial Catalog=houseCRUD;Integrated Security=True";
+        //    con.Open();
+
+        //    SqlCommand cmd = new SqlCommand();
+        //    cmd.Connection = con;
+        //    cmd.CommandText = sql;
+        //    if (paras != null)
+        //    {
+        //        foreach (SqlParameter p in paras)
+        //        {
+        //            cmd.Parameters.Add(p);
+        //        }
+        //    }
+        //    cmd.ExecuteNonQuery();
+
+        //    con.Close();
+        //}
+
+
+        //public DataTable queryBySql(string sql, List<SqlParameter> paras)
+        //{
+        //    SqlConnection con = new SqlConnection();
+        //    con.ConnectionString = @"Data Source=.;Initial Catalog=houseCRUD;Integrated Security=True";
+        //    con.Open();
+
+        //    SqlCommand cmd = new SqlCommand();
+        //    cmd.Connection = con;
+        //    cmd.CommandText = sql;
+        //    if (paras != null)
+        //    {
+        //        foreach (SqlParameter p in paras)
+        //        {
+        //            cmd.Parameters.Add(p);
+        //        }
+        //    }
+
+        //    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        //    DataSet ds = new DataSet();
+        //    adapter.Fill(ds);
+        //    con.Close();
+        //    return ds.Tables[0];
+        //}
     }
 }

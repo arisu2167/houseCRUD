@@ -50,11 +50,12 @@ namespace houseCRUD.Controllers
 
 
         }
-        public ActionResult CustomerEdit()
+        public ActionResult CustomerEdit(CCustomer n)
         {
             //int id = Convert.ToInt32(fCustomerId);
             //List<CCustomer> lsCustomers = CCustomerFactory.fn顧客查詢();
-            //CCustomer ccustomer = lsCustomers.FirstOrDefault(m => m.fCustomerId == id);
+            //CCustomer ccustomer = lsCustomers.FirstOrDefault(m => m.fCustomerId == n.fCustomerId);
+            //var cus=db.tcus
 
             return View();
         }
@@ -63,11 +64,8 @@ namespace houseCRUD.Controllers
         {
             List<CCustomer> lsCustomers = CCustomerFactory.fn顧客查詢();
             CCustomer ccustomer = lsCustomers.FirstOrDefault(m => m.fCustomerId == c.fCustomerId);
-            if (ccustomer == null)
-            {
-                return RedirectToAction("CustomerData");
-            }
-            else
+            var data = "";
+            if (ccustomer != null)
             {
                 ccustomer.fCustomerName = c.fCustomerName;
                 ccustomer.fCustomerBirth = c.fCustomerBirth;
@@ -77,6 +75,10 @@ namespace houseCRUD.Controllers
                 ccustomer.fCustomerPhone = c.fCustomerPhone;
                 CCustomerFactory.fn顧客更新(ccustomer);
                 return RedirectToAction("CustomerEdit");
+            }
+            else
+            {                
+                return RedirectToAction("CustomerData");
             }           
         }
 

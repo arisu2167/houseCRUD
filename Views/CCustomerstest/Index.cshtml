@@ -1,0 +1,62 @@
+﻿@model IEnumerable<houseCRUD.tCustomer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>主頁</h3>
+
+<p>
+    @Html.ActionLink("顧客新增", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            姓名
+        </th>
+        <th>
+            生日
+        </th>
+        <th>
+            性別
+        </th>
+        <th>
+            電子信箱
+        </th>
+        <th>
+            地址
+        </th>
+        <th>
+            電話
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerGender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomerPhone)
+        </td>
+        <td>
+            @Html.ActionLink("編輯", "Edit", new { id=item.fCustomerId }) |            
+            @Html.ActionLink("刪除", "Delete", new { id=item.fCustomerId })
+        </td>
+    </tr>
+}
+
+</table>

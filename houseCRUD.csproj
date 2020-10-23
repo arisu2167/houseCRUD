@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CCustomerstestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="dbbase.Context.cs">
       <AutoGen>True</AutoGen>
@@ -219,6 +220,11 @@
     <Content Include="Views\Home\CustomerData.cshtml" />
     <Content Include="Views\Home\CustomerCreate.cshtml" />
     <Content Include="Views\Home\CustomerEdit.cshtml" />
+    <Content Include="Views\CCustomerstest\Create.cshtml" />
+    <Content Include="Views\CCustomerstest\Delete.cshtml" />
+    <Content Include="Views\CCustomerstest\Details.cshtml" />
+    <Content Include="Views\CCustomerstest\Edit.cshtml" />
+    <Content Include="Views\CCustomerstest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
